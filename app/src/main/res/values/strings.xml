@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HPCL</string>
+    <string name="app_name">HRRL</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
@@ -8,4 +8,8 @@
     <string name="ok">OK</string>
     <string name="permission_granted">Permission is granted. You can use the camera now.</string>
     <string name="storage_permission_granted">Storage permission is granted. You can use now.</string>
+
+    <string name="write_success">Write Success</string>
+    <string name="write_fail">Write Failed</string>
+    <string name="read_fail">Read Failed</string>
 </resources>

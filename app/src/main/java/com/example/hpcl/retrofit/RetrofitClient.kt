@@ -1,6 +1,7 @@
 package com.example.hpcl.retrofit
 
 
+import com.example.hpcl.sharePreference.SharePref
 import com.example.hpcl.utils.Cons
 import com.google.gson.GsonBuilder
 import okhttp3.Interceptor
@@ -39,21 +40,21 @@ class RetrofitClient {
 
 
 
+
+
         private fun getClient(addHeaders: Boolean): OkHttpClient {
-
-
-
             val logging = HttpLoggingInterceptor()
             logging.level = HttpLoggingInterceptor.Level.BODY
             val httpClient = OkHttpClient.Builder()
             httpClient.addInterceptor(logging)
-                .connectTimeout(2, TimeUnit.MINUTES)
-                .readTimeout(2, TimeUnit.MINUTES)
-                .writeTimeout(2, TimeUnit.MINUTES)
+                .connectTimeout(15, TimeUnit.MINUTES)
+                .readTimeout(30, TimeUnit.MINUTES)
+                .writeTimeout(15, TimeUnit.MINUTES)
             if (addHeaders) {
                 httpClient.addInterceptor { chain: Interceptor.Chain ->
                     val request = chain.request().newBuilder()
                     request.addHeader("Content-Type", "application/json")
+                    request.addHeader("Authorization", "Bearer " + (SharePref.get().getData(Cons.ACCESSTOKEN)))
                     chain.proceed(request.build())
                 }
             }

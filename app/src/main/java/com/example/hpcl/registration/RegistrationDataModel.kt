@@ -1,8 +1,12 @@
 package com.example.hpcl.registration
 
 
+import androidx.room.Entity
+import androidx.room.Index
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+//@Entity(tableName = "registration_table",indices = [Index(value = ["rfidTag"], unique = true)])
 data class RegistrationDataModel(
     @SerializedName("departMentId")
     val departMentId: Int,

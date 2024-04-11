@@ -29,7 +29,6 @@ tools:context=".identification.VehicleActivity">
     app:layout_constraintTop_toTopOf="parent">
 
 
-
     <Button
         android:id="@+id/btn_sumbit"
         android:layout_width="40dp"
@@ -42,7 +41,7 @@ tools:context=".identification.VehicleActivity">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="HPCL"
+        android:text="HRRL"
         android:textSize="20sp"
         android:textStyle="bold"
         android:visibility="visible"
@@ -66,6 +65,18 @@ tools:context=".identification.VehicleActivity">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_UHF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="UHFTesting"
+            android:visibility="gone"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="16dp"/>
 
         <ImageButton
             android:id="@+id/btn_erase"
@@ -96,9 +107,10 @@ tools:context=".identification.VehicleActivity">
                 android:id="@+id/im_emp_img"
                 android:layout_width="260dp"
                 android:layout_height="200dp"
+                android:scaleType="centerCrop"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="24dp"
-                android:src="@drawable/priest"/>
+                android:background="@drawable/priest"/>
 
 
 
@@ -118,6 +130,7 @@ tools:context=".identification.VehicleActivity">
                 android:id="@+id/im_vehicle"
                 android:layout_width="260dp"
                 android:layout_height="200dp"
+                android:scaleType="centerCrop"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="24dp"
                 android:src="@drawable/car"/>
@@ -238,7 +251,7 @@ tools:context=".identification.VehicleActivity">
                         android:id="@+id/tv_active_heading"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Active:"
+                        android:text="Vehicle Status:"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:layout_marginTop="8dp"
@@ -338,10 +351,18 @@ tools:context=".identification.VehicleActivity">
 
                     <TextView
                         android:id="@+id/tv_activit"
-                        android:layout_width="wrap_content"
+                        android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:textColor="@color/black"
+                        android:text="Active"
+                        android:visibility="gone"
+                        android:paddingStart="2pt"
+                        android:paddingEnd="2pt"
+                        android:gravity="center"
+                        android:paddingTop="1pt"
+                        android:paddingBottom="1pt"
+                        android:background="@drawable/not_active_bg"
+                        android:textColor="@color/white"
                         android:textSize="16sp" />
 
                     <LinearLayout
@@ -401,7 +422,7 @@ tools:context=".identification.VehicleActivity">
             android:layout_centerInParent="true"
             android:layout_marginStart="16dp"
             android:gravity="center"
-            android:visibility="gone"
+            android:visibility="visible"
             app:layout_constraintStart_toStartOf="parent"
             android:orientation="horizontal"
             app:layout_constraintTop_toBottomOf="@+id/ll_card_view">
